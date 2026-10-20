@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profiles</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f0f2f5; }
+        .profile-card {
+            background: white; border-radius: 8px; padding: 20px;
+            margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .profile-card h2 { margin-top: 0; color: #2c3e50; }
+        .label { font-weight: bold; color: #555; }
+        .pref { display: inline-block; background: #e8f0fe; color: #1a73e8;
+                padding: 2px 8px; border-radius: 4px; margin: 2px; font-size: 0.9em; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>User Profiles</h1>
+    <div id="output">Loading...</div>
+    <script>
+        fetch('userProfiles.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Fetch error: ' + response.status);
+                return response.json();
+            })
+            .then(json => {
+                const profiles = json.userProfiles;
+                let html = '';
+                profiles.forEach(user => {
+                    const addr = user.profile.address;
+                    const pref = user.preferences;
+                    html += `
+                        <div class="profile-card">
+                            <h2>${user.firstName} ${user.lastName}</h2>
+                            <p><span class="label">Email:</span> ${user.email}</p>
+                            <p><span class="label">Date of Birth:</span> ${user.dateOfBirth}</p>
+                            <p><span class="label">Address:</span> ${addr.street}, ${addr.city}, ${addr.state} ${addr.zipCode}</p>
+                            <p><span class="label">Preferences:</span>
+                                <span class="pref">Theme: ${pref.theme}</span>
+                                <span class="pref">Language: ${pref.language}</span>
+                                <span class="pref">Notifications: ${pref.notifications}</span>
+                                <span class="pref">Subscription: ${pref.subscription}</span>
+                            </p>
+                        </div>`;
+                });
+                document.getElementById('output').innerHTML = html;
+            })
+            .catch(err => {
+                document.getElementById('output').innerHTML =
+                    '<p class="error">Fetch error: ' + err.message + '</p>';
+            });
+    </script>
+</body>
+</html>

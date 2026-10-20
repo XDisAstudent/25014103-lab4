@@ -1,0 +1,64 @@
+{
+  "userProfiles": [
+    {
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "email": "alice.johnson@example.com",
+      "dateOfBirth": "1990-05-14",
+      "profile": {
+        "address": {
+          "street": "123 Maple Street",
+          "city": "Springfield",
+          "state": "IL",
+          "zipCode": "62704"
+        }
+      },
+      "preferences": {
+        "theme": "dark",
+        "language": "en",
+        "notifications": true,
+        "subscription": true
+      }
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "email": "bob.smith@example.com",
+      "dateOfBirth": "1985-11-02",
+      "profile": {
+        "address": {
+          "street": "456 Oak Avenue",
+          "city": "Portland",
+          "state": "OR",
+          "zipCode": "97201"
+        }
+      },
+      "preferences": {
+        "theme": "light",
+        "language": "es",
+        "notifications": false,
+        "subscription": false
+      }
+    },
+    {
+      "firstName": "Carol",
+      "lastName": "Lee",
+      "email": "carol.lee@example.com",
+      "dateOfBirth": "1998-03-21",
+      "profile": {
+        "address": {
+          "street": "789 Pine Road",
+          "city": "Austin",
+          "state": "TX",
+          "zipCode": "73301"
+        }
+      },
+      "preferences": {
+        "theme": "auto",
+        "language": "fr",
+        "notifications": true,
+        "subscription": true
+      }
+    }
+  ]
+}

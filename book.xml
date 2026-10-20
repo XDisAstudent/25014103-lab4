@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookCatalogue>
+    <book id="B001">
+        <title>Harry Potter and the Philosopher's Stone</title>
+        <author>J.K. Rowling</author>
+        <price>19.99</price>
+    </book>
+    <book id="B002">
+        <title>The Hobbit</title>
+        <author>J.R.R. Tolkien</author>
+        <price>14.50</price>
+    </book>
+    <book id="B003">
+        <title>1984</title>
+        <author>George Orwell</author>
+        <price>9.99</price>
+    </book>
+</bookCatalogue>
